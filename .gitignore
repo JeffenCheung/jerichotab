@@ -1,0 +1,62 @@
+# 忽略文件规则:
+# 忽略规则是对文件名有效的;
+# A: 空行或#号开始的行,会被忽略;
+# B: 可以使用通配符:
+#	*        任意字符;
+#	?        单个字符;
+#	[abc]    多种可能的字符a、b或c;
+#	[a-z0-9] 表示在某个范围内进行匹配;
+#	\        转义字符;
+#	!        表示取反(不忽略),写在某条规则的前面;
+# C: 路径分隔符"/";如果"/"后面的名称是个目录,则该目录以及该目录下的所有文件都会被忽略;如果"/"后面的名称是个文件,则该文件不会被忽略;
+#	例如: /name
+#	如果name是个目录,则目录name和name下的所有文件都会被忽略;如果name是个文件,则该文件不会被忽略;
+# D: .gitignore文件也可以忽略自己,只要把自己的名字写进来即可;
+# E: 一条(行)忽略规则只对某一个目录下的文件有效,而对该目录下的子目录中的文件无效;
+# F: 一条(行)忽略规则也可以只对单个文件有效(忽略单个指定的文件);
+#	例如:
+#	*.a       #忽略所有以.a为后缀的文件;
+#	!lib.a    #不忽略文件lib.a;
+#	/TODO     #只忽略此目录下TODO文件,子目录的TODO不被忽略;
+#	build/    #忽略build目录下的所有文件;
+#	doc/*.txt #只忽略doc/下所有的txt文件,但是不忽略doc/subdir/下的txt文件;
+
+# 忽略.svn文件和.svn目录
+.svn
+
+# 忽略.settings目录
+.settings/
+
+# 只忽略.classpath文件，不忽略.classpath目录
+.classpath
+!.classpath/
+
+# 只忽略.project文件，不忽略.project目录
+.project
+!.project/
+
+# 只忽略foo.*文件，不忽略foo.*目录
+foo.*
+!foo.*/
+
+# 忽略noop文件和noop目录
+noop
+
+
+# modify by ThinkGem
+.mymetadata
+.checkstyle
+.classpath
+.project
+.class
+.war
+.zip
+.rar
+.idea
+*.iml
+.settings/*
+/indexes/*
+/target/*
+/src/main/webapp/WEB-INF/classes/*
+/src/main/webapp/userfiles/*
+/target/
